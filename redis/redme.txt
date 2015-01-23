@@ -1,0 +1,14 @@
+--install redis
+wget http://download.redis.io/releases/redis-2.8.13.tar.gz
+$ tar xzf redis-2.8.13.tar.gz
+$ cd redis-2.8.13
+$ make
+-- start redis
+$ src/redis-server
+-- how to use redis
+redis-server /etc/redis/redis.conf 
+$ src/redis-cli
+redis> set foo bar
+OK
+redis> get foo
+"bar"

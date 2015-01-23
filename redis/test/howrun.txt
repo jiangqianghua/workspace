@@ -1,0 +1,1 @@
+g++ redisTest.cpp -o redisTest -I./deps/hiredis/ -L./deps/hiredis/ -lhiredis
