@@ -27,3 +27,5 @@ cd $GOPATH/src
 mkdir test1
 cd test1
 vi t1.go
+
+go install 
