@@ -1,0 +1,29 @@
+
+£º
+sudo add-apt-repository ppa:gophers/go
+sudo apt-get update
+sudo apt-get install golang-stable
+
+»òudo apt-get install golang
+»ò±½ÓÂØoÓÑ°²װ°ü³ÅÖ£º
+vi /etc/profile
+¼Óëxport GOROOT=/usr/lib/go
+export GOARCH=386
+export GOOS=linux
+export GOPATH=/home/administrator/workspace/go
+export GOBIN=$GOPATH/bin
+export PATH=$GOPATH/bin:$PATH
+
+source /etc/profile
+
+ÔÐ½¨GOPATHÏÐ½¨È¸ö¼
+mkdir src pkg bin
+src ´æԴÂ
+pkg ´æ±àÉ³ɵÄļþ
+bin ´æÉ³ɵĿÉ´ÐÎ¼þ
+
+´´½¨µÚ»¸ö¦Ó
+cd $GOPATH/src
+mkdir test1
+cd test1
+vi t1.go
