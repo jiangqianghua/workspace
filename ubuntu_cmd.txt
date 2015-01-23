@@ -1,0 +1,50 @@
+-- vim --
+>> :%s/a/b/g     ->  b ti huan diao a  , g mean all
+>> :/a			 -> quan wen cha zhao a
+>> :/20			 ->go to 20 line
+-- look size --
+>>df -hl
+>> du -sk filename
+-- mysql --
+>> net start mysql
+>> net stop mysql
+>> mysql  -uroot  -p150700
+>> quit
+>> mysqladmin -u -p 
+
+------apache2--------- 
+>>sudo apt-get install apache2
+>>sudo /etc/init.d/apache2 restart
+>>vim /etc/apache2/httpd.conf
+  ServerName localhost:80
+
+------djiango----------
+1. install apache mysql wsgi
+>> sudo apt-get install mysql-server mysql-client apache2 python-mysqldb libapache2-mod-wsgi
+2. install django
+>> sudo apt-get install python-setuptools
+>> easy_install django
+3. the other install django
+>>wget http://www.djangoproject.com/m/releases/1.4/Django-1.4.tar.gz
+>> tar xzvf Django-1.4.tar.gz
+>>cd Django-1.4
+>>python setup.py install
+>> python manage.py validate
+>>python manage.py sqlall app
+4. run django
+>> python manage.py runserver ip:port
+>>django-admin.py startproject mysite
+>>python manmage.py shell
+>>python manage.py startapp books
+>> python manage.py validate  (check model)
+>> python manage.py sqlall app  (show sql)
+>> python manmage.py syncdb (create tables)
+5. run c++ mysql 
+>>g++ $(mysql_config --cflags) testmysql.cpp -o testmysql $(mysql_config --libs)
+6. insert libmysql
+>> sudo aptitude install libmysqlclient-dev libmysql++-dev
+7. vim operator
+>> ctrl + ]  goto fun 
+>> ctrl + o  go back fun
+>> ctrl + +  show big
+>> ctrl + - show small
