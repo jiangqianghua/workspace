@@ -11,18 +11,27 @@
 	#include "myhead.h"	
 #endif
 using namespace std;
-
+/*
+template<typename ElemType>
+class LinkNode
+{
+	public:
+		ElemType data ;
+		LinkNode *next;
+}
+*/
 template <typename ElemType>
 class LinkList
 {
 public:
+	   
 	class LinkNode
 	{
 		public:
 			ElemType data ; 
 			LinkNode *next ;
 	};
-
+	
 	typedef LinkNode * NodePointer ; 
 	void adverse() ; //链表逆转
 	void clear() ;  // 清空循环链表
@@ -31,9 +40,218 @@ public:
 	void deleteRepeat();// 删除重复的值
 	Status getElem(int i , ElemType& e) ;// 获取指定的元素
 	NodePointer getHead(); //获取头部指针
+	int getLength();
+	Status insert(int i , ElemType e) ;
+	bool isEmpty();
+	Status locationElem(ElemType e , Status (*compare)(ElemType , ElemType) , int & i);
+	Status nextElem(ElemType e , ElemType& next_e);
+	LinkList<ElemType> operator = (LinkList<ElemType> rightL);
+	Status priorElem(ElemType e , ElemType & prior_e);
+	LinkList();
+	virtual ~LinkList();
+	LinkList(const LinkList<ElemType>& otherL);
+	Status addElem(ElemType e);
 protected:
 	NodePointer head ;
 };
+
+template<typename ElemType>
+Status LinkList<ElemType>::addElem(ElemType e)
+{
+	NodePointer p = this->head ; 
+	NodePointer s ;
+
+	while(p != NULL && p->next != NULL)
+	{
+		p = p->next ;
+	}
+	
+	s = new LinkNode();
+	s->data = e ;
+//	cout<<e<<endl;
+	if(!p)
+	{
+		cout<<"--"<<e<<endl;
+		this->head = s ;
+		return OK;
+	}	
+	cout<<"---"<<e<<endl;
+	p->next = s ;
+	return OK
+
+	
+}
+template<typename ElemType>
+LinkList<ElemType>::LinkList(const LinkList<ElemType>& otherL)
+{
+	NodePointer p ;
+	NodePointer op = otherL->head ; 
+	NodePointer s;
+	p = head = NULL;
+
+	while(op)
+	{
+	
+		if(!head)
+			head = op ; 
+		s = new LinkNode();
+
+		s->data = op->data ;
+
+		p = s ; 
+		p = p->next ;
+	}
+	if(head)
+		p->next = NULL; 
+}
+template<typename ElemType>
+LinkList<ElemType>::~LinkList()
+{
+	clear();
+}
+template<typename ElemType>
+LinkList<ElemType>::LinkList()
+{
+	this->head = NULL;
+}
+
+template<typename ElemType>
+Status LinkList<ElemType>::priorElem(ElemType e , ElemType & prior_e)
+{
+	NodePointer pr ;
+	NodePointer p ;
+
+	p = pr = this->getHead();
+
+	while(p && !equal(p->data , e))
+	{
+		pr = p;
+		p = p->next;
+	}
+
+	if(!p || !pr)
+		return ERROR ; 
+
+	prior_e->data = pr->data ; 
+	return OK;
+}
+template<typename ElemType>
+LinkList<ElemType> LinkList<ElemType>::operator = (LinkList<ElemType> rightL)
+{
+	NodePointer p = NULL; 
+	NodePointer rp = rightL->getHead();
+	NodePointer s ; 
+	if(this != &rightL)
+	{
+		clear();
+		while(rp)
+		{
+			s = new LinkNode() ;
+			s->Data = rp->Data ;
+			if(!head)
+				head = s ;
+			else
+				p->next = s ;
+
+			p = s ;
+			rp = rp->next ; 
+		}
+
+		if(p)
+			p->next = NULL ;
+	}
+
+	return *this ;
+}
+template<typename ElemType>
+Status LinkList<ElemType>::nextElem(ElemType e , ElemType& next_e)
+{
+	NodePointer p = head ; 
+	while(p && !equal(p->data , e))
+	{
+		p = p->next ;
+	}
+
+	if(!p || !p->next)
+		return ERROR ; 
+
+	next_e = p->next->Data ;
+	return OK ;
+}
+/*
+template<typename ElemType>
+Status compare(ElemType e1 , ElemType e2)
+{
+	return e1 == e2 ;
+}
+*/
+template<typename ElemType>
+Status LinkList<ElemType>::locationElem(ElemType e , Status (*compare)(ElemType , ElemType) , int & i)
+{
+	NodePointer p = head ; 
+	i = 1; 
+	while(p && !(&compare)(p->data , e))
+	{
+		i++ ; 
+		p = p->next ;
+	}
+
+	if(!p)
+		return ERROR;
+
+	return OK;
+}
+template<typename ElemType>
+bool LinkList<ElemType>::isEmpty()
+{
+	return head?false:true;
+}
+template<typename ElemType>
+Status LinkList<ElemType>::insert(int i , ElemType e)
+{
+	int index = 0 ; 
+	NodePointer p = head ; 
+	NodePointer s ;
+
+	while(p && index < i - 1)
+	{
+		index++ ;
+		p = p->next ;
+	}
+
+	if(!p || index > i)
+	{
+		return ERROR ;
+	}
+
+	s = new LinkNode() ; 
+	s->data = e ;
+
+	if(i == 1)
+	{
+		s->next = head ; 
+		head = s ;
+	}
+	else
+	{
+		s->next = p->next ; 
+		p->next = s ;
+	}
+	return OK ;
+}
+template<typename ElemType>
+int LinkList<ElemType>::getLength()
+{
+	int n = 0 ;
+	NodePointer p = head;
+	while(p != NULL)
+	{
+		p = p->next ;
+		n++;
+	}
+
+	return n ;
+}
 
 template<typename ElemType>
 void LinkList<ElemType>::adverse()
@@ -134,8 +352,8 @@ Status LinkList<ElemType>::getElem(int i , ElemType &e)
 	return OK ;
 }
 
-template<typename ElemType >
-LinkList<ElemType>::NodePointer LinkList<ElemType>::getHead()
+template<typename ElemType>
+typename  LinkList<ElemType>::NodePointer LinkList<ElemType>::getHead()
 {
 	return head ; 
 }
