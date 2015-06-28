@@ -75,5 +75,15 @@ struct worker_opts
 	pthread_mutex_t mutex ; 
 	struct worker_ctl *work ;
 }
+void Par_Init(int argc , char *argv[]);
+int Request_Parse(struct worker_ctl *wctl);
+int Request_Handle(struct worker_ctl1 *wctl);
+
+int Worker_ScheduleRun();
+int Worker_ScheduleStop();
+void Method_Do(struct worker_ctl1 *ectl);
+void uri_parse(char *src , int len);
+#define DBGPRINT printf
+
 #endif /* __SHTTPD_H__ */
 
