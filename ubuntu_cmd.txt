@@ -1,4 +1,4 @@
--- vim --
+-- vim  --
 >> :%s/a/b/g     ->  b ti huan diao a  , g mean all
 >> :/a			 -> quan wen cha zhao a
 >> :/20			 ->go to 20 line
