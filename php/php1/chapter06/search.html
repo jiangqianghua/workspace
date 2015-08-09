@@ -1,0 +1,22 @@
+<!-- http://192.168.202.130/php1/chapter06/reach.html-->
+<html>
+	<head>
+		<title> Search books</title>
+	</head>
+	<body>
+		<h1> Search books</h1>
+		<form action='result.php' method='post'>
+			Choose Search Type:<br/>
+			<Select name='searchtype'>
+				<option value='author'>author</option>
+				<option value='title'>title</option>
+				<option value='isbn'>isbn</option>
+			</Select>
+			<br />
+			Enter Search Term:<br />
+			<input name='searchterm' type='text' size='40' />
+			<br />
+			<input name='submit' type='submit' value='Search' />
+		</form>
+	</body>
+</html>

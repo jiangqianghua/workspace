@@ -1,0 +1,3 @@
+tireqty:2 oilqty:3 sparkqty:4
+tireqty:3 oilqty:3 sparkqty:3
+tireqty:4 oilqty:3 sparkqty:4
