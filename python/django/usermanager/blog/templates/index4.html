@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>hello</title>
+	</head>
+
+	<body>
+		<h1>django templates .... </h1>
+		{% if user %}
+		<li>{{user.name}}</li>
+		<li>{{user.age}}</li>
+		<li>{{user.sex}}</li>
+		<li>{{user.say}}</li>
+		{% else %}
+		<li>no user</li>
+		{% endif %}
+		<br>
+		{% for book in book_list %}
+		<li>{{book}}</li>
+		{% endfor %}
+		<br>
+		{% for k in userdict %}
+		<li>{{k}}</li>
+		{% endfor %}
+		<br>
+		{% for k,v in userdict.items %}
+		<li>{{forloop.counter}}.{{k}} ->  {{v}}</li>
+		{% endfor%}
+	</body>
+</html>

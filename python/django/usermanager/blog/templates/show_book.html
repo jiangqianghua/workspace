@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<title>hello</title>
+	</head>
+
+	<body>
+		<h1>django templates .... </h1>
+		{% for book in books %}
+		<h3>{{book}}</h3>
+		<div>
+			{% for author in book.author.all %}
+				<li>	{{author}} </li>
+			{% endfor %}
+		</div>
+		{% endfor %}
+	</body>
+</html>
