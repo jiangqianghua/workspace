@@ -5,6 +5,7 @@
 	$age = $_POST['age'];
 	$uid = $redis->incr("userid");
 	$redis->hmset("user:".$uid , array('uid'=>$uid , 'username'=>$username ,'password'=>$password , 'age'=>$age));
-	
+	$redis->rpush("uid",$uid);
+	$redis->set("username:".$username,$uid);
 	header('location:userlist.php');
 ?>
