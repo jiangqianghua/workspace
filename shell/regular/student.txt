@@ -1,0 +1,5 @@
+name	age	sex	socre
+hudan	24	f	100
+zhu	22	f	100
+jiang	27	m	90
+hua	30	m	0
