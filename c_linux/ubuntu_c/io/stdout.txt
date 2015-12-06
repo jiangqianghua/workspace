@@ -1,0 +1,8 @@
+input the int value i:
+input the int value j:
+1/2=0
+input the int value i:
+input the int value j:
+input the int value i:
+input the int value j:
+8/4=2
