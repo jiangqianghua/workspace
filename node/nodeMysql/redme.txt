@@ -1,0 +1,16 @@
+日志流程实现：
+
+程序大体流程
+
+
+Web浏览器 <----- http req req ----->  timetrack_server.js  --------> http模块
+												|
+												|------------------>mysql模块
+												|
+												|------------------>timetrack 模块
+																	|-->Add function	
+																	|-->Archive function
+																	|-->Delete function
+																	|-->Show function
+
+timetrack 是我们需要实现的模块，主要实现对日志的删删改查和归档
