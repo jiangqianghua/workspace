@@ -7,6 +7,7 @@ app.use('/admin',admin); //http://192.168.1.101:3000/admin/jiang3   url根必须
 app.use(hello);
 app.listen(3000);
 
+
 // 中间件 ，打印日志
 function logger(req,res,next) {
 	console.log('%s,%s',req.method , req.url);
