@@ -1,0 +1,83 @@
+# Settings of Terrier (TRECQuerying) generated for run /home/jiangqianghua/Desktop/workspace/java/terrier/var/results/InL2c10.99_1.res
+#Sat Jan 30 20:37:29 PST 2016
+terrier.etc=/home/jiangqianghua/Desktop/workspace/java/terrier/etc
+blocks.max=100000
+lexicon.hash.suffix=.lexhash
+bundle.size=2500
+querying.default.controls=c\:1.0,start\:0,end\:999
+trec.results=results
+matching.tsms=
+trec.matching=Matching
+docs.check=20
+trec.iteration=Q
+stopwords.intern.terms=false
+terrier.index.path=index
+trec.querying.dump.settings=true
+querying.allowed.controls=c,scope,qe,qemodel,start,end
+merge.prefix=MRG_
+merge.temp.number=100000
+if.suffix=.if
+FieldTags.doctag=
+matching.retrieved_set_size=1000
+field.querying=false
+trec.topics.parser=TRECQuery
+collection.spec=collection.spec
+FieldTags.skip=
+trec.manager=Manager
+memory.reserved=50000000
+log4j.config=terrier-log.xml
+stopwords.filename=stopword-list.txt
+terrier.home=/home/jiangqianghua/Desktop/workspace/java/terrier
+terrier.var=var
+TrecQueryTags.skip=DESC,NARR
+block.indexing=false
+querying.postfilters.controls=
+TrecQueryTags.idtag=NUM
+trec.output.format.length=1000
+max.term.length=20
+trec.querycounter.type=sequential
+expansion.models=qemodels
+expansion.terms=10
+ignore.low.idf.terms=true
+querying.postfilters.order=
+blocks.size=1
+trec.results.suffix=.res
+frequency.upper.threshold=0
+terrier.share=share
+matching.dsms=
+expansion.documents=3
+manager.caching.filters=false
+FieldTags.process=
+lexicon.use.hash=true
+querying.postprocesses.controls=qe\:QueryExpansion
+log.suffix=.log
+string.use_utf=false
+TrecQueryTags.doctag=TOP
+terrier.index.prefix=data
+ignore.empty.documents=false
+match.empty.query=false
+trec.models=trec.models
+trec.topics.list=trec.topics.list
+doc.index.suffix=.docid
+lexicon.index.suffix=.lexid
+FieldTags.idtag=
+TrecQueryTags.process=TOP,NUM,TITLE
+lowercase=true
+querying.postprocesses.order=QueryExpansion
+trec.qrels=trec.qrels
+df.suffix=.df
+querying.no.negative.requirement=
+docno.byte.length=20
+indexproperties.suffix=.properties
+trecquery.ignore.desc.narr.name.tokens=true
+lexicon.suffix=.lex
+termpipelines=Stopwords,PorterStemmer
+# topicfile: ./topic/topics.wt2g
+# control: end=999
+# control: start=0
+# control: c=1.0
+# run started at: 1454215049090
+# run finished at 1454215049483
+# c=10.990000 c_set=true
+# model=uk.ac.gla.terrier.matching.models.InL2
+

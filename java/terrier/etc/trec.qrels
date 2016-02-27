@@ -1,0 +1,2 @@
+#add the qrels files to use for evaluation
+./seed/qrels.wt2g
