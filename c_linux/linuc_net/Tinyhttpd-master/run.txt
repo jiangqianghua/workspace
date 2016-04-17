@@ -1,1 +1,1 @@
-gcc -W -Wall -lpthread -o httpd httpd.c
+gcc -W -Wall -pthread -o httpd httpd.c
